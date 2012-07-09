@@ -2,4 +2,4 @@ Machine-Learning
 ================
 
 Homework
-ex3. Digits recognition
+ex3.  handwritten digits recognition

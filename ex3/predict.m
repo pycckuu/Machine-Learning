@@ -9,7 +9,13 @@ num_labels = size(Theta2, 1);
 
 % You need to return the following variables correctly 
 p = zeros(size(X, 1), 1);
-
+X = [ones(m, 1) X];
+layer1=sigmoid(X*Theta1');
+layer1 = [ones(m, 1) layer1];
+size(layer1);
+layer2 = sigmoid(layer1*Theta2');
+size(layer2);
+[Y,p] = max(layer2,[],2);
 % ====================== YOUR CODE HERE ======================
 % Instructions: Complete the following code to make predictions using
 %               your learned neural network. You should set p to a 
