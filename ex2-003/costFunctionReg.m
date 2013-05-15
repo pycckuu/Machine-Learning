@@ -12,7 +12,7 @@ J = 0;
 grad = zeros(size(theta));
 
 
-J = (sum( -y .* log(sigmoid(X*theta)) - (1 - y) .* log(1-sigmoid(X*theta)) ) / m ) + lambda/(2 * m) * sum (theta.^2)
+J = (sum( -y .* log(sigmoid(X*theta)) - (1 - y) .* log(1-sigmoid(X*theta)) ) / m ) + lambda/(2 * m) * sum (theta(2:end).^2);
 
 grad(1) = sum((sigmoid(X*theta) - y).*X(:,1)) / m;
 
