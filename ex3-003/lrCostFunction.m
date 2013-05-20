@@ -10,7 +10,7 @@ m = length(y); % number of training examples
 
 % You need to return the following variables correctly 
 J = 0;
-grad = zeros(size(theta))
+grad = zeros(size(theta));
 
 
 % ====================== YOUR CODE HERE ======================
@@ -36,15 +36,11 @@ grad = zeros(size(theta))
 %           temp(1) = 0;   % because we don't add anything for j = 0  
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
-
-
-
-
-
-
-
-
-
+h0 = sigmoid(X*theta);
+J = sum( -y .* log(h0) - (1 - y) .* log(1-h0) ) / m + lambda/(2*m)*sum(theta.^2);
+grad = X' * (h0 - y) / m;
+temp = lambda/m * theta;
+grad(2:end) = grad(2:end) + temp(2:end);
 
 % =============================================================
 
